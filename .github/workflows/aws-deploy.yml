@@ -36,8 +36,6 @@ jobs:
           curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh -O
 
       - name: Run lacework installer
-        env:
-          LW_API_KEY: ${{ secrets.}}
         run: |
           sudo chmod +x install.sh
           sudo ./install.sh
