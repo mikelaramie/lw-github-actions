@@ -20,6 +20,10 @@ jobs:
   prep:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      LW_KEY_ID: ${{ secrets.LW_KEY_ID }}
+      LW_KEY_SECRET: ${{ secrets.LW_KEY_SECRET }}
+      LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,19 +36,16 @@ jobs:
           curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh -O
 
       - name: Run lacework installer
+        env:
+          LW_API_KEY: ${{ secrets.}}
         run: |
           sudo chmod +x install.sh
           sudo ./install.sh
           lacework version
-
+      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
-      - name: Copy files to the test website with the AWS CLI
-        run: |
-          aws s3 cp README.md s3://brkc-test-bucket
-  
