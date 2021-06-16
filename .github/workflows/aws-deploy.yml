@@ -36,7 +36,8 @@ jobs:
     needs: prep
     steps:
       - name: Test LW CLI
-        run: lacework version
+        # run: lacework version
+        run: sudo install.sh
 
 #      - name: Configure AWS credentials from Test account
 #        uses: aws-actions/configure-aws-credentials@v1
