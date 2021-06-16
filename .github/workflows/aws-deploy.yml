@@ -44,5 +44,5 @@ jobs:
           aws-region: us-east-1
 
       - name: Copy files to the test website with the AWS CLI
-        run: aws s3 sync ./README.md s3://brkc-test-bucket
+        run: aws s3 sync README.md s3://brkc-test-bucket
           
