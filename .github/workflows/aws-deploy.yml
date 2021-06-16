@@ -33,6 +33,6 @@ jobs:
 
       - name: Run lacework installer
         run: |
-          sudo install.sh
+          ls install.sh
 
   
