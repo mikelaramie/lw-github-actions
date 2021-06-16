@@ -30,7 +30,9 @@ jobs:
       - name: Install/configure Lacework CLI
         run: |
           curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh -O
+          echo "Listing contents of dir"
           ls .
+          echo "Fixin to run"
           sudo install.sh
 
 
