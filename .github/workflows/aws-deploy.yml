@@ -46,5 +46,5 @@ jobs:
 
       - name: Copy files to the test website with the AWS CLI
         run: |
-          aws s3 cp README.md s3://my-s3-test-website-bucket
+          aws s3 cp README.md s3://brkc-test-bucket
   
