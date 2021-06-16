@@ -28,7 +28,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install/configure Lacework CLI
-        run: sudo curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh | bash
+        run: |
+          curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh -O
+          sudo ./install.sh
+
 
       - name: Test LW CLI
         run: lacework version
