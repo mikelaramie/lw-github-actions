@@ -50,5 +50,6 @@ jobs:
 
       - name: Do the THING
         run: | 
+          terraform init
           terraform apply -auto-approve
   
