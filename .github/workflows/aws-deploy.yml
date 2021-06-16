@@ -33,6 +33,6 @@ jobs:
 
       - name: Run lacework installer
         run: |
-          ls install.sh
+          cat install.sh
 
   
