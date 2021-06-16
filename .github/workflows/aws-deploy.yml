@@ -33,7 +33,7 @@ jobs:
 
       - name: Run lacework installer
         run: |
-          sudo chmod x install.sh
+          sudo chmod +x install.sh
           sudo ls -al  install.sh
           sudo install.sh
 
