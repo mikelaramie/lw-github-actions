@@ -4,10 +4,16 @@ name: Text me
 on:
   workflow_dispatch:
     inputs:
-      AWS_NAME: 
-        description: 'This is a fake parameter'
-        default: 'who cares, its fake'
+      SMS_NUMBER: 
+        description: 'Target Number'
+        default: 'Who we gonna text?'
         required: true
+
+      SMS_MSG:
+        description: 'Spam content'
+        default: 'What up yo'
+        required: true
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,8 +27,8 @@ jobs:
       - name: 'Sending SMS Notification'
         uses: twilio-labs/actions-sms@v1
         with:
-          fromPhoneNumber: '+19014575769'
-          toPhoneNumber: '+1(512)6887422'
+          fromPhoneNumber: ${{ github.event.inputs.SMS_NUMBER }}
+          toPhoneNumber: ${{ github.event.inputs.SMS_MSG }}
           message: 'Hello from Twilio'
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
