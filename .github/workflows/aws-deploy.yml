@@ -1,5 +1,5 @@
 name: Lacework-Deploy CT and Config
-# TODO: Create clever naming convention for tfstate file
+# TODO: Leverage Terraform backend maintenance of state file (https://www.terraform.io/docs/language/settings/backends/s3.html)
 # Controls when the action will run. 
 on:
   workflow_dispatch:
@@ -48,4 +48,3 @@ jobs:
           terraform init
           terraform apply --auto-approve
           aws s3 cp terraform.tfstate s3://brkc-tf-state-files
-  
