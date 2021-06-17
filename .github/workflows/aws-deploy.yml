@@ -54,7 +54,7 @@ jobs:
 
       - name: Do the THING
         run: | 
-          terraform init
-          terraform plan
+          echo "The Key"
+          echo $LW_API_KEY
           
   
