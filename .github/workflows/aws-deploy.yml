@@ -63,6 +63,6 @@ jobs:
           LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
         run: | 
           echo "The Key"
-          echo $LW_API_KEY          
+          echo "$LW_API_KEY"
           echo "Done with the key"
   
