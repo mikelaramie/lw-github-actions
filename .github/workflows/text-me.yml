@@ -27,8 +27,8 @@ jobs:
       - name: 'Sending SMS Notification'
         uses: twilio-labs/actions-sms@v1
         with:
-          fromPhoneNumber: ${{ github.event.inputs.SMS_NUMBER }}
-          toPhoneNumber: ${{ github.event.inputs.SMS_MSG }}
+          fromPhoneNumber: '+19014575769'
+          toPhoneNumber: ${{ github.event.inputs.SMS_NUMBER }}
           message: 'Hello from Twilio'
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
