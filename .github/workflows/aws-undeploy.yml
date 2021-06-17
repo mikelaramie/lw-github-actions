@@ -2,6 +2,8 @@ name: Lacework-UNDeploy CT and Config
 # TODO: Leverage Terraform backend maintenance of state file (https://www.terraform.io/docs/language/settings/backends/s3.html)
 # Controls when the action will run. 
 on:
+#  repository_dispatch:
+#    types: [destroy]
   workflow_dispatch:
     inputs:
       AWS_NAME: 
