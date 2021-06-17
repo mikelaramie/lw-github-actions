@@ -1,4 +1,4 @@
-name: Text me
+name: Spam me
 # TODO: Create clever naming convention for tfstate file
 # Controls when the action will run. 
 on:
@@ -18,7 +18,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"a
-  prep:
+  spam:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
