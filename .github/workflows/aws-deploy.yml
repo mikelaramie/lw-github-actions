@@ -62,7 +62,6 @@ jobs:
           LW_API_SECRET: ${{ secrets.LW_API_SECRET }}
           LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
         run: | 
-          echo "The Key"
-          echo "$LW_API_KEY"
-          echo "Done with the key"
+          terraform init
+          terraform apply --auto-approve
   
