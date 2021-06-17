@@ -1,7 +1,7 @@
 terraform {
     backend "s3" {
     bucket = "brkc-tf-state-files"
-    key    = "state_files/terraform.state"
+    key    = "state_files/terraform.tfstate"
     region = "us-east-1"
   }
   required_providers {

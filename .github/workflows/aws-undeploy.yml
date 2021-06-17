@@ -46,5 +46,4 @@ jobs:
           LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
         run: | 
           terraform init
-          terraform apply --auto-approve
-          
+          terraform apply -destroy --auto-approve
