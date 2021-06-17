@@ -21,7 +21,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      LW_API_ID: ${{ secrets.LW_KEY_ID }}
+      LW_API_KEY: ${{ secrets.LW_KEY_ID }}
       LW_API_SECRET: ${{ secrets.LW_KEY_SECRET }}
       LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
       TF_LOG: trace
