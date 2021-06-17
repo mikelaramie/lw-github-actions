@@ -29,7 +29,7 @@ jobs:
         with:
           fromPhoneNumber: '+19014575769'
           toPhoneNumber: ${{ github.event.inputs.SMS_NUMBER }}
-          message: 'Hello from Twilio'
+          message: ${{ github.event.inputs.SMS_MSG }}
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
