@@ -9,6 +9,8 @@ on:
   #pull_request:
   # branches: [ main ]
 
+# TODO: Stash the state file somewhere, maybe an S3 bucket
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -55,4 +57,5 @@ jobs:
         run: | 
           terraform init
           terraform apply --auto-approve
+          aws s3 cp terraform.tfstate s3://brkc-tf-state-files
   
