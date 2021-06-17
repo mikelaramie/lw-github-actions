@@ -20,18 +20,6 @@ jobs:
   prep:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      #LW_API_KEY: LWINTBRY_7CCC3D8447865E16C4086CC3C240B9F5121F3A362093AFF
-      #LW_API_SECRET: _67d888a3d3482667c13e49f57c6b6aa4
-      #LW_ACCOUNT: lwintbryancross
-      #LW_API_KEY: ${{ secrets.LW_KEY_ID }}
-      #LW_API_SECRET: ${{ secrets.LW_KEY_SECRET }}
-      #LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
-      FOO_BAR: THis is the foo
-      #TF_LOG: trace
-      #TF_VAR_iam_role_external_id: "brkc-lw-github"
-      #TF_VAR_iam_role_name: "brkc-lw-role"
-      #TF_VAR_iam_role_arn: ""
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
