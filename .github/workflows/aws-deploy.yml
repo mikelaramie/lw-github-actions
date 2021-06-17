@@ -2,12 +2,15 @@ name: Lacework-Deploy CT and Config
 # TODO: Leverage Terraform backend maintenance of state file (https://www.terraform.io/docs/language/settings/backends/s3.html)
 # Controls when the action will run. 
 on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       AWS_NAME: 
         description: 'This is a fake parameter'
         default: 'who cares, its fake'
         required: true
+  
+  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
