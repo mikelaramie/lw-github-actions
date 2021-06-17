@@ -1,0 +1,31 @@
+name: Text me
+# TODO: Create clever naming convention for tfstate file
+# Controls when the action will run. 
+on:
+  workflow_dispatch:
+    inputs:
+      AWS_NAME: 
+        description: 'This is a fake parameter'
+        default: 'who cares, its fake'
+        required: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  prep:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+    - name: 'Sending SMS Notification'
+            uses: twilio-labs/actions-sms@v1
+            with:
+              fromPhoneNumber: '+19014575769'
+              toPhoneNumber: '+1(512)6887422'
+              message: 'Hello from Twilio'
+            env:
+              TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+              TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+              TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
