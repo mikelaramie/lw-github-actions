@@ -2,22 +2,12 @@ name: Lacework-Deploy CT and Config
 
 # Controls when the action will run. 
 on:
-
-  # Triggers the workflow on push or pull request events but only for the main branch
-  #push:
-  #  branches: [ main ]
-  #pull_request:
-  # branches: [ main ]
-
-# TODO: Stash the state file somewhere, maybe an S3 bucket
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       AWS_NAME: 
-      description: 'This is a fake parameter'
-      default: 'who cares, its fake'
-      required: true
+        description: 'This is a fake parameter'
+        default: 'who cares, its fake'
+        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
