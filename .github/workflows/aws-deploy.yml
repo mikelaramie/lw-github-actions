@@ -24,6 +24,9 @@ jobs:
       LW_KEY_ID: ${{ secrets.LW_KEY_ID }}
       LW_KEY_SECRET: ${{ secrets.LW_KEY_SECRET }}
       LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
+      TF_VAR_external_id: "brkc-lw-github"
+      TF_VAR_iam_role_name: "brkc-lw-role"
+      TF_VAR_iam_role_arn: ""
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
