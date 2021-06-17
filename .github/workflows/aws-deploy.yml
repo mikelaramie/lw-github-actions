@@ -3,7 +3,7 @@ name: Lacework-Deploy CT and Config
 # Controls when the action will run. 
 on:
   repository_dispatch:
-    types: [destroy]
+    types: [create]
   workflow_dispatch:
     inputs:
       AWS_NAME: 
