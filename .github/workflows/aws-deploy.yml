@@ -58,7 +58,7 @@ jobs:
 
       - name: Do the THING
         run: | 
-          echo "The account"
-          echo "${LW_ACCOUNT}"
+          terraform init
+          terraform plan
           
   
