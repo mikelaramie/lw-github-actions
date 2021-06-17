@@ -55,7 +55,7 @@ jobs:
 
       - name: Do the THING
         run: | 
-          echo "The Key"
-          echo "${FOO_BAR}"
+          echo "The account"
+          echo "${LW_ACCOUNT}"
           
   
