@@ -6,10 +6,10 @@ name: AWSDeploy
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  #push:
+  #  branches: [ main ]
+  #pull_request:
+  # branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,9 +24,9 @@ jobs:
       LW_KEY_ID: ${{ secrets.LW_KEY_ID }}
       LW_KEY_SECRET: ${{ secrets.LW_KEY_SECRET }}
       LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
-      TF_VAR_iam_role_external_id: "brkc-lw-github"
-      TF_VAR_iam_role_name: "brkc-lw-role"
-      TF_VAR_iam_role_arn: ""
+      #TF_VAR_iam_role_external_id: "brkc-lw-github"
+      #TF_VAR_iam_role_name: "brkc-lw-role"
+      #TF_VAR_iam_role_arn: ""
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
