@@ -1,5 +1,5 @@
 name: Lacework-Deploy CT and Config
-
+# TODO: Create clever naming convention for tfstate file
 # Controls when the action will run. 
 on:
   workflow_dispatch:
