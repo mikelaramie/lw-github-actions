@@ -55,6 +55,6 @@ jobs:
       - name: Do the THING
         run: | 
           echo "The Key"
-          echo ${{ LW_API_KEY }}
+          echo "${LW_API_KEY}"
           
   
