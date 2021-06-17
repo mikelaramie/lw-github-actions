@@ -21,8 +21,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-      LW_KEY_ID: ${{ secrets.LW_KEY_ID }}
-      LW_KEY_SECRET: ${{ secrets.LW_KEY_SECRET }}
+      LW_API_ID: ${{ secrets.LW_KEY_ID }}
+      LW_API_SECRET: ${{ secrets.LW_KEY_SECRET }}
       LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
       TF_LOG: trace
       #TF_VAR_iam_role_external_id: "brkc-lw-github"
