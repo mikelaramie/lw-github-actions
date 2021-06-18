@@ -6,8 +6,16 @@ terraform {
   }
 }
 
+variable "gcp_org_id" {
+  type = string
+}
+
+variable "gcp_project_id" {
+  type = string
+}
+
 provider "google" {
-  project     = var.gcp_project_id
+  project = var.gcp_project_id
 }
 
 provider "lacework" {}

@@ -1,19 +1,19 @@
 terraform {
-    backend "s3" {
+  backend "s3" {
     bucket = "brkc-tf-state-files"
     key    = "state_files/terraform.tfstate"
     region = "us-east-1"
   }
   required_providers {
     lacework = {
-      source = "lacework/lacework"
+      source  = "lacework/lacework"
       version = "~> 0.5"
     }
   }
 }
 
 provider "aws" {
-    region = "us-east-1"
+  region = "us-east-1"
 }
 
 provider "lacework" {}
