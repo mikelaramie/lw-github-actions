@@ -11,7 +11,7 @@ provider "google" {
 }
 
 provider "lacework" {
-  account    = var.lacework_account
-  api_key    = var.lacework_api_key
-  api_secret = var.lacework_api_secret
+  account    = var.lw_account
+  api_key    = var.lw_api_key
+  api_secret = var.lw_api_secret
 }
