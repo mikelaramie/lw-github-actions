@@ -45,6 +45,8 @@ jobs:
           LW_API_KEY: ${{ secrets.LW_API_KEY }}
           LW_API_SECRET: ${{ secrets.LW_API_SECRET }}
           LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
+          TF_VAR_gcp_org_id: ${{ secrets.GCP_ORG_ID }}
+          TF_VAR_gcp_project_id: ${{ secrets.GCP_PROJECT_ID }}
         run: |
           cd gcp/
           terraform init
