@@ -19,11 +19,9 @@ module "gcp_organization_audit_log" {
 }
 
 // Adding IAM grant to allow for a clean destroy until v1.0.2 of audit-log/gcp is released
-data "google_client_config" "current"{
-
-}
 
 resource "google_storage_bucket_iam_member" "audit-sa" {
+  depends_on = module.gcp_organization_audit_log
   bucket = module.gcp_organization_audit_log.google_storage_bucket.lacework_bucket[0].name
   role = "roles/storage.admin"
   member = "serviceAccount:${var.gcp_sa_email}"
