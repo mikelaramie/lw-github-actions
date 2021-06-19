@@ -27,6 +27,7 @@ resource "google_storage_bucket_iam_member" "audit-sa" {
   member = "serviceAccount:${var.gcp_sa_email}"
 }
 
+// Adding IAM grant until ALLY-547 is resolved
 resource "google_organization_iam_member" "binding" {
   org_id = var.gcp_org_id
   role   = "roles/resourcemanager.organizationViewer"
