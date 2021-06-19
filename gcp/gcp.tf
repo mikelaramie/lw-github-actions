@@ -16,6 +16,7 @@ module "gcp_organization_audit_log" {
   //service_account_name         = module.gcp_organization_config.service_account_name
   //service_account_private_key  = module.gcp_organization_config.service_account_private_key
   organization_id = var.gcp_org_id
+  enable_ubla     = true
 }
 
 // Adding IAM grant to allow for a clean destroy until v1.0.2 of audit-log/gcp is released
