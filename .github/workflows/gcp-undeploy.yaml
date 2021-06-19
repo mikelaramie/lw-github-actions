@@ -44,6 +44,7 @@ jobs:
         env:
           TF_VAR_gcp_org_id: ${{ secrets.GCP_ORG_ID }}
           TF_VAR_gcp_project_id: ${{ secrets.GCP_PROJECT_ID }}
+          TF_VAR_gcp_sa_email: ${{ secrets.GCP_SA_EMAIL }}
           TF_VAR_lw_account: ${{ secrets.LW_ACCOUNT }}
           TF_VAR_lw_api_key: ${{ secrets.LW_API_KEY }}
           TF_VAR_lw_api_secret: ${{ secrets.LW_API_SECRET }}
