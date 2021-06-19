@@ -30,5 +30,5 @@ resource "google_storage_bucket_iam_member" "audit-sa" {
 resource "google_organization_iam_member" "binding" {
   org_id = var.gcp_org_id
   role   = "roles/resourcemanager.organizationViewer"
-  member = "serviceAccount:${module.gcp_organization_audit_log.service_account_name}"
+  member = "serviceAccount:${module.gcp_organization_audit_log.service_account_name}@${var.gcp_project_id}.iam.gserviceaccount.com"
 }
