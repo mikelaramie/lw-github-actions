@@ -26,3 +26,11 @@ resource "google_storage_bucket_iam_member" "audit-sa" {
   role   = "roles/storage.admin"
   member = "serviceAccount:${var.gcp_sa_email}"
 }
+
+output "bucket_name" {
+  value = module.gcp_organization_audit_log.bucket_name
+}
+
+output "gcp_sa_email" {
+  value = var.gcp_sa_email
+}
