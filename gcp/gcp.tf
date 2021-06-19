@@ -27,10 +27,8 @@ resource "google_storage_bucket_iam_member" "audit-sa" {
   member = "serviceAccount:${var.gcp_sa_email}"
 }
 
-output "bucket_name" {
-  value = module.gcp_organization_audit_log.bucket_name
-}
-
-output "gcp_sa_email" {
-  value = var.gcp_sa_email
+resource "google_organization_iam_member" "binding" {
+  org_id = var.gcp_org_id
+  role   = "roles/resourcemanager.organizationViewer"
+  member = "serviceAccount:${module.gcp_organization_audit_log.service_account_name}"
 }
