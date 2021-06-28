@@ -50,6 +50,7 @@ jobs:
           TF_VAR_lw_api_key: ${{ secrets.LW_API_KEY }}
           TF_VAR_lw_api_secret: ${{ secrets.LW_API_SECRET }}
         run: | 
+          cd aws/
           terraform init
           terraform apply --auto-approve
           
