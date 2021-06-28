@@ -40,7 +40,7 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Do the GCP THING
+      - name: Deploy Lacework - GCP
         env:
           TF_VAR_gcp_org_id: ${{ secrets.GCP_ORG_ID }}
           TF_VAR_gcp_project_id: ${{ secrets.GCP_PROJECT_ID }}
