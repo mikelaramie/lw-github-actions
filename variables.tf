@@ -1,23 +1,3 @@
-/* 
-// AWS
-variable "aws_region" {
-  type = string
-}
-*/
-
-// GCP
-variable "gcp_org_id" {
-  type = string
-}
-
-variable "gcp_project_id" {
-  type = string
-}
-
-variable "gcp_sa_email" {
-  type = string
-}
-
 // Lacework
 variable "lw_account" {
   description = "Lacework Account to integrate with"
