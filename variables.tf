@@ -1,7 +1,9 @@
+/* 
 // AWS
 variable "aws_region" {
   type = string
 }
+*/
 
 // GCP
 variable "gcp_org_id" {
