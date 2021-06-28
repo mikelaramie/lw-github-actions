@@ -5,11 +5,11 @@ on:
   repository_dispatch:
     types: [create]
   workflow_dispatch:
-    inputs:
-      AWS_NAME: 
-        description: 'This is a fake parameter'
-        default: 'who cares, its fake'
-        required: true
+#    inputs:
+#      AWS_NAME: 
+#        description: 'This is a fake parameter'
+#        default: 'who cares, its fake'
+#        required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
