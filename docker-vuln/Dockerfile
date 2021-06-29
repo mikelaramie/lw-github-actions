@@ -144,11 +144,6 @@ RUN curl -LO ${CURL_OPTIONS} \
 RUN curl -LO ${CURL_OPTIONS} \
       http://rubygems.org/downloads/activesupport-4.2.1.gem
 
-# utils.js - Javascript file 
-#
-# CVE-2015-3227,CVE-2015-3226
-#
-COPY utils.js /tmp/utils.js
 # nodejs - Javascript (installed manually)
 #
 # https://www.cvedetails.com/vulnerability-list/vendor_id-12113/product_id-30764/version_id-192848/Nodejs-Node.js-0.10.41.html
@@ -177,26 +172,3 @@ RUN curl -LO ${CURL_OPTIONS} \
     cd .. && \
     rm -rf bash-4.3 && \
     rm -rf *.tar.gz
-
-# rpmsquirt
-#
-RUN touch /var/lib/rpm/* && \
-    yum -y install rpm-build redhat-rpm-config rpmdevtools
-COPY rpmsquirt.sh /rpmsquirt.sh
-COPY rpmsquirt.dat /
-RUN /rpmsquirt.sh 
-
-# Precautionary failure with messages
-#
-CMD echo 'Vulnerable image' && /bin/false
-
-# Basic labels.
-# http://label-schema.org/
-#
-LABEL \
-    org.label-schema.name="bad-dockerfile" \
-    org.label-schema.description="Reference Dockerfile containing software with known vulnerabilities." \
-    org.label-schema.url="http://www.stindustries.net/docker/bad-dockerfile/" \
-    org.label-schema.vcs-type="Git" \
-    org.label-schema.vcs-url="https://github.com/ianmiell/bad-dockerfile" \
-    org.label-schema.docker.dockerfile="/Dockerfile"
