@@ -34,8 +34,8 @@ jobs:
           LW_ACCOUNT_TOKEN: ${{ secrets.LW_ACCOUNT_TOKEN }}
         run: |
           cd docker
-          sudo chmod +x ./lw-scanner
-          ./lw-scanner scan mikelaramie/dummy-vuln-app latest
+          sudo chmod +x ../lw-scanner
+          ../lw-scanner scan mikelaramie/dummy-vuln-app latest
       -
         name: Build and push
         id: docker_build
