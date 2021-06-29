@@ -1,1 +1,1 @@
-FROM node:7-alpine
+FROM centos:7
