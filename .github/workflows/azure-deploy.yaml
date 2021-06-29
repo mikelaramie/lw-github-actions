@@ -1,0 +1,47 @@
+name: Lacework Azure - Deploy Azure AT and Config
+# TODO: Leverage Terraform backend maintenance of state file (https://www.terraform.io/docs/language/settings/backends/s3.html)
+# Controls when the action will run. 
+on:
+  repository_dispatch:
+    types: [create]
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  deployLW-Azure:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: download Lacework CLI
+        run: |
+          curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh -O
+      - name: Run lacework installer
+        run: |
+          sudo chmod +x install.sh
+          sudo ./install.sh
+          lacework version
+      
+      - name: Set up gcloud Cloud SDK environment
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Deploy Lacework - GCP
+        env:
+          TF_VAR_azure_rm_key: ${{ secrets.AZURE_RM_KEY }}
+          TF_VAR_lw_account: ${{ secrets.LW_ACCOUNT }}
+          TF_VAR_lw_api_key: ${{ secrets.LW_API_KEY }}
+          TF_VAR_lw_api_secret: ${{ secrets.LW_API_SECRET }}
+        run: |
+          cd gcp/
+          terraform init
+          terraform apply --auto-approve
