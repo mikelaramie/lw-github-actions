@@ -89,14 +89,14 @@ RUN curl -LO ${CURL_OPTIONS} \
 # OpenJDK - Java (RPM install)
 #
 #
-RUN curl -LO ${CURL_OPTIONS} \
-      http://mirror.switch.ch/ftp/pool/4/mirror/scientificlinux/7.0/x86_64/updates/security/java-1.8.0-openjdk-1.8.0.91-0.b14.el7_2.x86_64.rpm && \
-    curl -LO ${CURL_OPTIONS} \
-      http://mirror.switch.ch/ftp/pool/4/mirror/scientificlinux/7.0/x86_64/updates/security/java-1.8.0-openjdk-headless-1.8.0.91-0.b14.el7_2.x86_64.rpm && \
-    touch /var/lib/rpm/* && \
-    yum -y install java-1.8.0-openjdk-1.8.0.91-0.b14.el7_2.x86_64.rpm java-1.8.0-openjdk-headless-1.8.0.91-0.b14.el7_2.x86_64.rpm && \
-    rm -f *.rpm && \
-    echo "exclude=java-1.8.0-openjdk java-1.8.0-openjdk-headless"  >> /etc/yum.conf
+# RUN curl -LO ${CURL_OPTIONS} \
+#      http://mirror.switch.ch/ftp/pool/4/mirror/scientificlinux/7.0/x86_64/updates/security/java-1.8.0-openjdk-1.8.0.91-0.b14.el7_2.x86_64.rpm && \
+#    curl -LO ${CURL_OPTIONS} \
+#      http://mirror.switch.ch/ftp/pool/4/mirror/scientificlinux/7.0/x86_64/updates/security/java-1.8.0-openjdk-headless-1.8.0.91-0.b14.el7_2.x86_64.rpm && \
+#    touch /var/lib/rpm/* && \
+#    yum -y install java-1.8.0-openjdk-1.8.0.91-0.b14.el7_2.x86_64.rpm java-1.8.0-openjdk-headless-1.8.0.91-0.b14.el7_2.x86_64.rpm && \
+#    rm -f *.rpm && \
+#    echo "exclude=java-1.8.0-openjdk java-1.8.0-openjdk-headless"  >> /etc/yum.conf
 
 # tomcat - Java application (RPM install)
 #
