@@ -37,6 +37,7 @@ jobs:
           LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT }}
           LW_ACCOUNT_TOKEN: ${{ secrets.LW_ACCOUNT_TOKEN }}
         run: |
+          cd docker
           sudo chmod +x ./lw-scanner
           ./lw-scanner scan mikelaramie/dummy-vuln-app latest
       -
