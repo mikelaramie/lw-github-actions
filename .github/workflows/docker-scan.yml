@@ -25,7 +25,7 @@ jobs:
       - 
         name: download lw-scanner
         run: |
-          curl https://github.com/lacework/lacework-vulnerability-scanner/releases/download/v0.1.3/lw-scanner-linux-amd64 -O
+          curl -o docker/lw-scanner https://github.com/lacework/lacework-vulnerability-scanner/releases/download/v0.1.3/lw-scanner-linux-amd64
       - 
         name: Build docker Image
         run: |
@@ -37,8 +37,8 @@ jobs:
           LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT }}
           LW_ACCOUNT_TOKEN: ${{ secrets.LW_ACCOUNT_TOKEN }}
         run: |
-          sudo chmod +x ../lw-scanner-linux-amd64 
-          ../lw-scanner-linux-amd64 scan mikelaramie/dummy-vuln-app latest
+          sudo chmod +x ./lw-scanner
+          ./lw-scanner scan mikelaramie/dummy-vuln-app latest
       -
         name: Build and push
         id: docker_build
